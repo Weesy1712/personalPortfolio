@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 body {
-    background-image: url("/assets/background-home-desktop.jpg");
+    background-image: url("/assets/DJI_0393-min.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -22,6 +22,11 @@ body {
 
 .logo {
     margin: 2rem;
+}
+
+.logo img {
+    width: 64px;
+    height: 64px;
 }
 
 .primary-header {
@@ -59,7 +64,7 @@ body {
 
 @media (max-width:35em) {
     body {
-        background-image: url("/assets/background-home-mobile.jpg");
+        background-image: url("/assets/DJI_0393-min.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
@@ -93,6 +98,11 @@ body {
     .mobile-nav-toggle[aria-expanded="true"] {
         background-image: url(/assets/x-mark-64.png);
     }
+    .primary-navigation a:hover {
+        color: aliceblue;
+        text-decoration: underline aliceblue;
+        text-decoration-thickness: 0.25em;
+    }
 }
 
 @media (min-width:35em) and (max-width:55em) {
@@ -100,7 +110,7 @@ body {
         display: none;
     }
     body {
-        background-image: url("/assets/background-home-tablet.jpg");
+        background-image: url("/assets/DJI_0393-min.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
@@ -115,17 +125,30 @@ body {
         padding-block: 2rem;
         padding-inline: clamp(3rem, 10vw, 10rem);
     }
+    .primary-navigation a:hover {
+        color: aliceblue;
+        text-decoration: underline aliceblue;
+        text-decoration-thickness: 0.25em;
+        text-underline-offset: 2em;
+    }
 }
 
 
 /*Main Content*/
 
 .main-content {
-    padding-top: 30vh;
+    padding-top: 20vh;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     color: aliceblue;
+}
+
+.content1 {
+    width: fit-content;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main-content h1 {
@@ -136,10 +159,47 @@ body {
     .main-content h1 {
         font-size: 3rem;
     }
+    .socials img {
+        height: 3rem;
+        width: auto;
+    }
+    .socials a {
+        padding: 0.5rem;
+    }
 }
 
 @media (min-width:35em) {
     .main-content h1 {
         font-size: 5rem;
     }
+    .socials img {
+        height: 3rem;
+        width: auto;
+    }
+    .socials a {
+        padding: 0.5rem;
+    }
+}
+
+@media (min-width:3400px) {
+    .socials img {
+        height: 7rem;
+        width: auto;
+    }
+    .socials a {
+        padding: 1rem;
+    }
+}
+
+
+/*Footer*/
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    text-align: center;
 }
