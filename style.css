@@ -152,7 +152,7 @@ body {
 }
 
 .main-content h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'archivo_blackregular';
 }
 
 @media (max-width:35em) {
