@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body {
+    overflow-x: hidden;
+    background-color: #181818 !important;
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+
+/*Primare header*/
+
+.primary-header h2 {
+    color: aliceblue;
+}
+
+.logo {
+    margin: 2rem;
+}
+
+.logo img {
+    width: 64px;
+    height: 64px;
+}
+
+.primary-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.primary-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: hsl(0 0% 0% /0.75);
+}
+
+.primary-navigation a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.primary-navigation a>[aria-hidden="true"] {
+    font-weight: 700;
+    margin-inline-end: .75em;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+    .primary-navigation {
+        background: hsl(0 0% 100% /0.1);
+        backdrop-filter: blur(1rem);
+    }
+}
+
+@media (max-width:35em) {
+    .primary-navigation {
+        --gap: 3em;
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+        transform: translateX(100%);
+        transition: transform 350ms ease-in;
+    }
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        background: url(/assets/icons8-menu-100.png);
+        background-size: cover;
+        width: 2rem;
+        aspect-ratio: 1;
+        border: 0;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+    }
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(/assets/x-mark-64.png);
+    }
+    .primary-navigation a:hover {
+        color: aliceblue;
+        text-decoration: underline aliceblue;
+        text-decoration-thickness: 0.25em;
+    }
+}
+
+@media (min-width:35em) {
+    .primary-navigation {
+        --gap: clamp(1.5rem, 5vw, 3rem);
+        padding-block: 2rem;
+        padding-inline: clamp(3rem, 10vw, 10rem);
+    }
+    .primary-navigation a:hover {
+        color: aliceblue;
+        text-decoration: underline aliceblue;
+        text-decoration-thickness: 0.25em;
+        text-underline-offset: 2em;
+    }
+}
+
+
+/*portfolio*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px 20px 0 20px;
+}
+
+.container .heading {
+    width: 50%;
+    padding-bottom: 50px;
+}
+
+.container .heading h3 {
+    font-size: 3em;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #222;
+}
+
+.container .heading h3 span {
+    font-weight: 100;
+}
+
+.container .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container .box .dream {
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+}
+
+.container .box .dream img {
+    width: 100%;
+    padding-bottom: 15px;
+    border-radius: 5px;
+}
+
+.container .btn {
+    margin: 40px 0 70px 0;
+    background: #222;
+    padding: 15px 40px;
+    border-radius: 5px;
+}
+
+.container .btn a {
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+
+@media only screen and (max-width: 769px) {
+    .container .box {
+        flex-direction: column;
+    }
+    .container .box .dream {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 643px) {
+    .container .heading {
+        width: 100%;
+    }
+    .container .heading h3 {
+        font-size: 1em;
+    }
+}
