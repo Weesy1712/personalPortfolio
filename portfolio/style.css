@@ -94,6 +94,12 @@ body {
     }
 }
 
+@media (min-width:35em) and (max-width:55em) {
+    .primary-navigation a>span[aria-hidden] {
+        display: none;
+    }
+}
+
 @media (min-width:35em) {
     .primary-navigation {
         --gap: clamp(1.5rem, 5vw, 3rem);
@@ -108,15 +114,18 @@ body {
     }
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    text-align: center;
+}
+
 
 /*portfolio*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 
 .container {
     display: flex;
@@ -130,17 +139,6 @@ body {
 .container .heading {
     width: 50%;
     padding-bottom: 50px;
-}
-
-.container .heading h3 {
-    font-size: 3em;
-    font-weight: bolder;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #222;
-}
-
-.container .heading h3 span {
-    font-weight: 100;
 }
 
 .container .box {
