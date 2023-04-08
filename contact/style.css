@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+body {
+    background-image: url("/assets/background1080p.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+
+/*Primare header*/
+
+.primary-header h2 {
+    color: aliceblue;
+}
+
+.logo {
+    margin: 2rem;
+}
+
+.logo img {
+    width: 64px;
+    height: 64px;
+}
+
+.primary-header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.primary-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: hsl(0 0% 0% /0.75);
+}
+
+.primary-navigation a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.primary-navigation a>[aria-hidden="true"] {
+    font-weight: 700;
+    margin-inline-end: .75em;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+    .primary-navigation {
+        background: hsl(0 0% 100% /0.1);
+        backdrop-filter: blur(1rem);
+    }
+}
+
+@media (max-width:35em) {
+    body {
+        background-image: url("/assets/background1080p.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+    .primary-navigation {
+        --gap: 3em;
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+        transform: translateX(100%);
+        transition: transform 350ms ease-in;
+    }
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        background: url(/assets/icons8-menu-100.png);
+        background-size: cover;
+        width: 2rem;
+        aspect-ratio: 1;
+        border: 0;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+    }
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(/assets/x-mark-64.png);
+    }
+    .primary-navigation a:hover {
+        color: aliceblue;
+        text-decoration: underline aliceblue;
+        text-decoration-thickness: 0.25em;
+    }
+}
+
+@media (min-width:35em) and (max-width:55em) {
+    .primary-navigation a>span[aria-hidden] {
+        display: none;
+    }
+    body {
+        background-image: url("/assets/background1080p.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width:35em) {
+    .primary-navigation {
+        --gap: clamp(1.5rem, 5vw, 3rem);
+        padding-block: 2rem;
+        padding-inline: clamp(3rem, 10vw, 10rem);
+    }
+    .primary-navigation a:hover {
+        color: aliceblue;
+        text-decoration: underline aliceblue;
+        text-decoration-thickness: 0.25em;
+        text-underline-offset: 2em;
+    }
+}
+
+
+/*Main Content*/
+
+.main-content {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: aliceblue;
+}
+
+.content1 {
+    width: fit-content;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-paragraph {
+    text-align: center;
+}
+
+.main-content h1 {
+    font-family: 'Playfair Display', serif;
+    padding-bottom: 2rem;
+}
+
+@media (max-width:35em) {
+    .main-content h1 {
+        font-size: 3rem;
+    }
+    .socials img {
+        height: 3rem;
+        width: auto;
+    }
+    .socials a {
+        padding: 0.5rem;
+    }
+}
+
+@media (min-width:35em) {
+    .main-content h1 {
+        font-size: 5rem;
+    }
+    .main-paragraph {
+        width: 50vw;
+    }
+    .socials img {
+        height: 3rem;
+        width: auto;
+    }
+    .socials a {
+        padding: 0.5rem;
+    }
+}
+
+@media (min-width:3400px) {
+    .socials img {
+        height: 7rem;
+        width: auto;
+    }
+    .socials a {
+        padding: 1rem;
+    }
+    .main-paragraph {
+        width: 40vw;
+    }
+}
+
+
+/*Footer*/
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    text-align: center;
+}
